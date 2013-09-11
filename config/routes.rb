@@ -2,6 +2,8 @@ LtiConsumer::Application.routes.draw do
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
+  match "tool_consumer" => "tool_consumers#tool_launch", via: :post
+
   root to: "tool_consumers#index"
 
   # Sample of regular route:
