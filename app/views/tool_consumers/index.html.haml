@@ -1,0 +1,29 @@
+=form_tag('/tool_consumer') do
+  .field
+    = label_tag "username"
+    = text_field_tag 'username'
+  .field
+    = label_tag "tool_name"
+    = text_field_tag 'tool_name'
+  .field
+    = label_tag "consumer_key"
+    = text_field_tag 'consumer_key'
+  .field
+    = label_tag "consumer_secret"
+    = text_field_tag 'consumer_secret'
+  .field
+    = label_tag "launch_url"
+    = text_field_tag 'launch_url'
+  .field
+    = check_box_tag 'new_window'
+    = label_tag "new_window"
+
+  .field    
+    = check_box_tag 'assignment'
+    = label_tag "assignment"
+
+  .field    
+    = check_box_tag 'autolaunch'
+    = label_tag "autolaunch"
+
+  = submit_tag "Submit"

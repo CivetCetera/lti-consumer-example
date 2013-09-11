@@ -1,0 +1,18 @@
+%table
+  %tr
+    %td{colspan: 2} Launch Parameters
+  -@consumer.generate_launch_data.each_pair do |key,value|
+    %tr
+      %td= key
+      %td= value
+
+=form_tag(@consumer.launch_url), { name: "ltiLaunchForm", id: "ltiLaunchForm", encType: "application/x-www-form-urlencoded" } do
+  -@consumer.generate_launch_data.each_pair do |key,value|
+    =hidden_field_tag key, value
+  =submit_tag
+
+-if @autolaunch
+  <script language="javascript">
+    document.getElementById("ltiLaunchFormSubmitArea").style.display = "none";
+    document.ltiLaunchForm.submit();
+  </script>
